@@ -8,6 +8,13 @@ describe('My string calculator', () => {
             sum = add('');
             expect(sum).toEqual(0);
         });
+        it('returns the same number if a single number is supplied', () => {
+            const singleNumInputs = ['1', '2', '3', '5', '10', '15', '28', '33', '512', '1024'];
+            for (const stringNum of singleNumInputs) {
+                sum = add(stringNum);
+                expect(sum).toEqual(Number(stringNum));
+            }
+        });
     });
 
 });
