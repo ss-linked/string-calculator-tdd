@@ -1,0 +1,14 @@
+{
+  "name": "string-calculator-tdd",
+  "version": "0.0.1",
+  "description": "A small TDD assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ss-linked",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
