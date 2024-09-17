@@ -27,6 +27,18 @@ describe('My string calculator', () => {
                 expect(sum).toEqual(expectedOutput);
             }
         });
+        it('returns the correct sum for newline/comma-separated numbers', () => {
+            const testData = [
+                { input: '1\n5', expectedOutput: 6 },
+                { input: '2\n4,6\n8,10', expectedOutput: 30 },
+                { input: '12,365\n512,1024\n25519', expectedOutput: 27432 },
+                { input: '23\n57\n1234\n5394\n35938\n80989\n6567', expectedOutput: 130202 },
+            ];
+            for (const { input, expectedOutput } of testData) {
+                sum = add(input);
+                expect(sum).toEqual(expectedOutput);
+            }
+        });
     });
 
 });
