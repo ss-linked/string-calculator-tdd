@@ -4,6 +4,18 @@ describe('My string calculator', () => {
         const { add } = require('./string-calc');
         let sum;
 
+        it('throws an error for a non-string input', () => {
+            const testInputs = [
+                1234,
+                false,
+                { input: '1,2,3' },
+                [ '1', '2', '3' ],
+            ];
+            for (const input of testInputs) {
+                expect(() => { add(input) }).toThrow(TypeError);
+                expect(() => { add(input) }).toThrow('Only a string is allowed');
+            }
+        });
         it('returns 0 for an empty string input', () => {
             sum = add('');
             expect(sum).toEqual(0);
