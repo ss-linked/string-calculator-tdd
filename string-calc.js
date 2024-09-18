@@ -1,10 +1,10 @@
 function add(str) {
     let sum = 0;
-    let numbers = splitNums(str);
+    let numbers = extractNumsFrom(str);
     sum = numbers.reduce((prev, curr) => prev + Number(curr), 0);
     return sum;
 
-    function splitNums(str) {
+    function extractNumsFrom(str) {
         const delimiters = [',', '\n'];
         const numList = [];
         let currentNum = '';
