@@ -6,9 +6,23 @@ function add(str) {
 
     function extractNumsFrom(str) {
         const delimiters = [',', '\n'];
+        const delimiterPrefix = '//';
+        const delimiterSuffix = '\n';
+        let parsedStr = str;
+        
+        if (str.startsWith(delimiterPrefix)) {
+            // remove delimiter prefix
+            parsedStr = str.slice(delimiterPrefix.length);
+            const delimiterSuffixIndex = parsedStr.indexOf(delimiterSuffix);
+            // split into 2 parts, before & after the delimiter suffix
+            const customDelimiter = parsedStr.slice(0, delimiterSuffixIndex);
+            parsedStr = parsedStr.slice(delimiterSuffixIndex + 1);
+            delimiters.push(customDelimiter);
+        }
+
         const numList = [];
         let currentNum = '';
-        for (const char of str) {
+        for (const char of parsedStr) {
             const charCode = char.charCodeAt();
             const isNum = (charCode > 47 && charCode < 58);
             if (isNum) currentNum += char;
@@ -18,6 +32,7 @@ function add(str) {
             }
         }
         if (currentNum) numList.push(currentNum);
+
         return numList;
     }
 }
