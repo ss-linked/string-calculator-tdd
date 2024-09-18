@@ -57,15 +57,14 @@ describe('My string calculator', () => {
         });
         it('throws an error for negative numbers in the list', () => {
             const testData = [
-                { input: '-1,2,3', expectedError: '-1' },
-                { input: '//-\n-2-4--6-8--10', expectedError: '-2,-6,-10' },
-                { input: '//#\n12#-365#512#-1024#25519', expectedError: '-365,-1024' },
-                { input: '23,-57,1234,-5394,-35938,80989,-6567', expectedError: '-57,-5394,-35938,-6567' },
+                { input: '-1,2,3', expectedErrVal: '-1' },
+                { input: '//-\n-2-4--6-8--10', expectedErrVal: '-2,-6,-10' },
+                { input: '//#\n12#-365#512#-1024#25519', expectedErrVal: '-365,-1024' },
+                { input: '23,-57,1234,-5394,-35938,80989,-6567', expectedErrVal: '-57,-5394,-35938,-6567' },
             ];
-            for (const { input, expectedError } of testData) {
-                sum = () => add(input);
-                expect(sum).toThrow(RangeError);
-                expect(sum).toThrow(expectedError);
+            for (const { input, expectedErrVal } of testData) {
+                expect(() => { add(input) }).toThrow(RangeError);
+                expect(() => { add(input) }).toThrow(`Negative numbers not allowed: ${expectedErrVal}`);
             }
         });
     });
