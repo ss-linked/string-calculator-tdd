@@ -1,4 +1,7 @@
 function add(str) {
+    if (typeof str !== 'string') {
+        throw new TypeError('Only a string is allowed');
+    }
     let sum = 0;
     const numbers = extractNumsFrom(str);
     const negativeNumbers = numbers.filter(n => Number(n) < 0);
