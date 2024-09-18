@@ -67,6 +67,18 @@ describe('My string calculator', () => {
                 expect(sum).toEqual(expectedOutput);
             }
         });
+        it('supports different delimiters along with newlines', () => {
+            const testData = [
+                { input: '//;\n1\n2;3', expectedOutput: 6 },
+                { input: '//-\n2-4\n6-8\n10', expectedOutput: 30 },
+                { input: '//#\n12\n365#512\n1024#25519', expectedOutput: 27432 },
+                { input: '//.\n23.57\n1234.5394\n35938\n80989.6567', expectedOutput: 130202 },
+            ];
+            for (const { input, expectedOutput } of testData) {
+                sum = add(input);
+                expect(sum).toEqual(expectedOutput);
+            }
+        });
         it('throws an error for negative numbers in the list', () => {
             const testData = [
                 { input: '-1,2,3', expectedErrVal: '-1' },
