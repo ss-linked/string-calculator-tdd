@@ -39,6 +39,22 @@ describe('My string calculator', () => {
                 expect(sum).toEqual(expectedOutput);
             }
         });
+        it('supports different delimiters', () => {
+            const testData = [
+                { input: '//;\n1;2;3', expectedOutput: 6 },
+                { input: '//$\n1$2$3', expectedOutput: 6 },
+                { input: '//-\n2-4-6-8-10', expectedOutput: 30 },
+                { input: '//!\n2!4!6!8!10', expectedOutput: 30 },
+                { input: '//#\n12#365#512#1024#25519', expectedOutput: 27432 },
+                { input: '//_\n12_365_512_1024_25519', expectedOutput: 27432 },
+                { input: '//.\n23.57.1234.5394.35938.80989.6567', expectedOutput: 130202 },
+                { input: '//:\n23:57:1234:5394:35938:80989:6567', expectedOutput: 130202 },
+            ];
+            for (const { input, expectedOutput } of testData) {
+                sum = add(input);
+                expect(sum).toEqual(expectedOutput);
+            }
+        });
     });
 
 });
