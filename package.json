@@ -4,11 +4,13 @@
   "description": "A small TDD assignment",
   "main": "index.js",
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "start": "vite serve src --port 9090"
   },
   "author": "ss-linked",
   "license": "ISC",
   "devDependencies": {
+    "vite": "^5.4.7",
     "vitest": "^2.1.1"
   }
 }
