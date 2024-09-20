@@ -1,7 +1,9 @@
+import { describe, it, expect } from 'vitest';
+import { add } from './string-calc.js';
+
 describe('My string calculator', () => {
 
     describe('Adding a string of comma-separated numbers', () => {
-        const { add } = require('./string-calc');
         let sum;
 
         it('throws an error for a non-string input', () => {

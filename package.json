@@ -4,14 +4,11 @@
   "description": "A small TDD assignment",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "vitest run"
   },
   "author": "ss-linked",
   "license": "ISC",
-  "dependencies": {
-    "jest": "^29.7.0"
-  },
   "devDependencies": {
-    "@types/jest": "^29.5.13"
+    "vitest": "^2.1.1"
   }
 }

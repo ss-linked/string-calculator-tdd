@@ -58,4 +58,4 @@ function add(str) {
     }
 }
 
-module.exports = { add };
+export { add };
