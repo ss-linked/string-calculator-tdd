@@ -11,7 +11,7 @@ calcButton.addEventListener('click', (e) => {
 		const result = calcFunctions[selectedFunction](calcInput.value);
 		calcResult.textContent = result;
 	} catch (error) {
-		console.warn(error);
+		console.error(error);
 	}
 });
 
