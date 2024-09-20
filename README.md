@@ -2,8 +2,8 @@
 
 Hello and welcome to my solution for the string calculator kata!
 
-# Stack
+## Stack
 
-- *Language*: Javascript
-- *Build tool*: Vite
-- *Tests*: Vitest
+- **Language**: Javascript
+- **Build tool**: Vite
+- **Tests**: Vitest
