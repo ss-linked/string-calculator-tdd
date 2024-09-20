@@ -1,4 +1,4 @@
-import { extractNumsFrom } from './utils.js'
+import { extractNumsFrom } from './utils'
 
 function add(str) {
     if (typeof str !== 'string') {

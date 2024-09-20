@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import add from './add.js';
+import add from './add';
 
 describe('Adding a string of comma-separated numbers', () => {
     let sum;

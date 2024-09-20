@@ -2,13 +2,30 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>String Calculator</title>
-		<script type="module" src="./script.js" async></script>
+		<script type="module" src="./script.js" defer></script>
 	</head>
 	<body>
-		<form>
-			<label for="addition">Add</label>
-			<input type="text" id="addition" placeholder="Enter a string for calculation"/>
+		<form name="string-calc">
+			<label for="calc-function" hidden>
+				Select a function to perform
+			</label>
+			<select id="calc-function">
+				<option value="add" selected>Add</option>
+			</select>
+			
+			<label for="calc-input" hidden>
+				Enter the input for calculation
+			</label>
+			<input
+				type="text"
+				id="calc-input"
+				placeholder="Enter a string for calculation"
+			/>
+			
+			<button type="submit" id="calc-button">Calculate</button>
 		</form>
+		<h2 id="calc-result">Result will be shown here</h2>
 	</body>
 </html>
