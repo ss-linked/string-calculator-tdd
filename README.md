@@ -7,6 +7,7 @@ Hello and welcome to my solution for the string calculator kata!
 - **Language**: Javascript
 - **Build tool**: Vite
 - **Tests**: Vitest
+- **Styling**: PicoCSS
 
 ## Notes
 
