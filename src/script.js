@@ -13,6 +13,7 @@ calcButton.addEventListener('click', (e) => {
 		calcResult.textContent = result;
 	} catch (error) {
 		console.error(error);
+		calcResult.textContent = error.message;
 	}
 });
 
