@@ -8,6 +8,10 @@ Hello and welcome to my solution for the string calculator kata!
 - **Build tool**: Vite
 - **Tests**: Vitest
 
+## Notes
+
+- **Node version**: v22.8.0
+
 ## Instructions
 
 - Clone the repo
