@@ -2,17 +2,19 @@ function extractNumsFrom(str) {
     const delimiters = [',', '\n'];
     const delimiterPrefix = '//';
     const delimiterSuffix = '\n';
-    let parsedStr = str;
     
-    if (str.startsWith(delimiterPrefix)) {
+    // un-escape the escaped newline characters entered through input field
+    let parsedStr = str.replace(/\\n/g, '\n');
+    
+    if (parsedStr.startsWith(delimiterPrefix)) {
         // remove delimiter prefix
-        parsedStr = str.slice(delimiterPrefix.length);
+        parsedStr = parsedStr.slice(delimiterPrefix.length);
         const delimiterSuffixIndex = parsedStr.indexOf(delimiterSuffix);
         // split into 2 parts, before & after the delimiter suffix
         const customDelimiter = parsedStr.slice(0, delimiterSuffixIndex);
         parsedStr = parsedStr.slice(delimiterSuffixIndex + 1);
         // handle special case for delimiter clashing with negative sign
-        if (customDelimiter.startsWith('-') && customDelimiter.endsWith('-')) {
+        if (customDelimiter.endsWith('-')) {
             // prefix 0 for handling case where the first number is negative
             parsedStr = ('0' + customDelimiter + parsedStr);
             parsedStr = (
