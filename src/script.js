@@ -1,3 +1,4 @@
+import '@picocss/pico/css/pico.min.css';
 import * as calcFunctions from './calc/functions';
 
 const calcInput = document.getElementById('calc-input');
